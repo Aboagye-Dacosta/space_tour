@@ -9,7 +9,7 @@ interface NavigatorInterface {
 function Navigator({ destinations }: NavigatorInterface) {
   return (
     <nav className="">
-      <ul className="flex gap-[3rem]">
+      <ul className="flex gap-[2rem]">
         {destinations.map((destination, i) => (
           <Nav key={i} destination={`0${i} ${destination}`} />
         ))}
@@ -39,7 +39,11 @@ function Nav({ destination }: { destination: string }) {
         {destination}
       </Link>
       {isActive && (
-        <motion.div layout layoutId="nav-item" className="w-100 h-1 bg-white" />
+        <motion.div
+          layout
+          layoutId="nav-item"
+          className="w-100 h-1 bg-red-500"
+        />
       )}
     </li>
   );

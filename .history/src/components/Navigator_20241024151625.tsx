@@ -9,7 +9,7 @@ interface NavigatorInterface {
 function Navigator({ destinations }: NavigatorInterface) {
   return (
     <nav className="">
-      <ul className="flex gap-[3rem]">
+      <ul className="flex gap-[2rem]">
         {destinations.map((destination, i) => (
           <Nav key={i} destination={`0${i} ${destination}`} />
         ))}
