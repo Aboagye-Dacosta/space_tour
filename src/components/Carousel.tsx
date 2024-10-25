@@ -84,11 +84,13 @@ const CarouselContent = ({
 const CarouselButtons = ({
   button,
   direction = "horizontal",
+  action,
   count,
 }: {
   button: ReactNode;
   direction?: "vertical" | "horizontal";
   count: number;
+  action?(index: number): void;
 }) => {
   const { setCurrentIndex, currentIndex } = useCarousel();
 
@@ -106,7 +108,10 @@ const CarouselButtons = ({
           >,
           {
             //@ts-expect-error has prop
-            onClick: () => setCurrentIndex(index),
+            onClick: () => {
+              setCurrentIndex(index);
+              if (action) action(index);
+            },
             isCurrent: currentIndex == index,
           }
         )

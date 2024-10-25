@@ -1,7 +1,5 @@
+import CrewDetail from "../features/crew/CrewDetail";
+
 export default function Crew() {
-  return (
-    <div>
-      <h1>Crew</h1>
-    </div>
-  );
+  return <CrewDetail />;
 }

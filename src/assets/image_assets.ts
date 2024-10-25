@@ -1,5 +1,5 @@
 export default class AppImageAssets {
-    static #defUrl = "/assets/";
+    static #defUrl = "/assets";
     static #crewDefUrl = `${this.#defUrl}/crew`;
     static #sharedDefUrl = `${this.#defUrl}/shared`;
     static #destinationDefUrl = `${this.#defUrl}/destination`;
@@ -50,6 +50,4 @@ export default class AppImageAssets {
     static technologyCapsuleWebp = `${this.#technologyDefUrl}/image-space-capsule-portrait.jpg`;
     static technologySpaceport = `${this.#technologyDefUrl}/image-spaceport-landscape.jpg`;
     static technologySpaceportWebp = `${this.#technologyDefUrl}/image-spaceport-portrait.jpg`;
-
-
 }

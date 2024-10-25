@@ -1,8 +1,5 @@
+import DestinationsDetail from "../features/destinations/DestinationsDetail";
 
 export default function Destination() {
-  return (
-    <div>
-      <h1>Destination</h1>
-    </div>
-  )
+  return <DestinationsDetail />;
 }
