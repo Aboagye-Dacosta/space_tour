@@ -1,5 +1,3 @@
-import AppImageAssets from "../assets/image_assets";
-
 export default function Logo() {
-  return <img src={AppImageAssets.logo} alt="logo" className="" />;
+  return <img src="/assets/shared/logo.svg" alt="logo" className="" />;
 }

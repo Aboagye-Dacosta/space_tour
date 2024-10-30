@@ -97,7 +97,7 @@ const CarouselButtons = ({
   return (
     <div
       className={`flex ${
-        direction == "vertical" ? "flex-col" : "flex-row"
+        direction == "vertical" ? "lg:flex-col" : "flex-row"
       } gap-4`}
     >
       {Array.from({ length: count }, (_item, index) =>
@@ -113,6 +113,7 @@ const CarouselButtons = ({
               if (action) action(index);
             },
             isCurrent: currentIndex == index,
+            index,
           }
         )
       )}

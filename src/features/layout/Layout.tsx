@@ -20,7 +20,7 @@ export default function Layout() {
   };
 
   return (
-    <div className={`${bgUrls[bgName]} bg-cover min-h-[100vh] transition-all ease-in-out duration-500`}>
+    <div className={`${bgUrls[bgName]} bg-cover min-h-[100vh] transition-all ease-in-out duration-500 flex flex-col`}>
       <Header />
       <Body />
     </div>

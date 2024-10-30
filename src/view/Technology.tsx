@@ -1,7 +1,5 @@
+import TechnologyDetail from "../features/technology/TechnologyDetail";
+
 export default function Technology() {
-  return (
-    <div>
-      <h1>Technology</h1>
-    </div>
-  );
+  return <TechnologyDetail />;
 }

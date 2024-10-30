@@ -25,7 +25,7 @@ export default {
         technologyDesktop: `url(${technologyDefUrl}/background-technology-desktop.jpg)`,
       },
       lineHeight: {
-        lnSmall: "0.5 !important",
+        lnSmall: "1 !important",
       }
     },
   },

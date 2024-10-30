@@ -7,36 +7,40 @@ import Container from "../../components/Container";
 import Description from "../../components/Description";
 import Image from "../../components/Image";
 import Leading from "../../components/Leading";
+import DefPadding from "../../components/DefPadding";
 
 export default function CrewDetail() {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   return (
-    <Container>
-      <Carousel>
-        <div className="flex flex-col gap-10 lg:gap-[15rem] max-w-[60rem]">
-          <Carousel.Content
-            data={crewData}
-            render={(data) => {
-              const crew = data as Crew;
-              return (
-                <Description title={crew.name} content={crew.bio}>
-                  <Leading text={crew.role} />
-                </Description>
-              );
-            }}
-          />
-          <Carousel.Buttons
-            button={<Button />}
-            count={crewData.length}
-            action={(index) => setCurrentIndex(index)}
-          />
+    <DefPadding>
+      <Leading text="02 MEET YOUR CREW" />
+      <Container>
+        <Carousel>
+          <div className="flex flex-col gap-10 justify-center items-center lg:items-start lg:gap-[15rem] max-w-[60rem]">
+            <Carousel.Content
+              data={crewData}
+              render={(data) => {
+                const crew = data as Crew;
+                return (
+                  <Description title={crew.name} content={crew.bio}>
+                    <Leading text={crew.role} />
+                  </Description>
+                );
+              }}
+            />
+            <Carousel.Buttons
+              button={<Button />}
+              count={crewData.length}
+              action={(index) => setCurrentIndex(index)}
+            />
+          </div>
+        </Carousel>
+        <div className="h-[70rem] flex-1">
+          <Image src={crewData[currentIndex].images.png} />
         </div>
-      </Carousel>
-      <div className="h-[70rem] flex-1">
-        <Image src={crewData[currentIndex].images.png} />
-      </div>
-    </Container>
+      </Container>
+    </DefPadding>
   );
 }
 

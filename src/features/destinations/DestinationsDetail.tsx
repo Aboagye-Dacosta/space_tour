@@ -4,11 +4,10 @@ import Container from "../../components/Container";
 import Description from "../../components/Description";
 import Divider from "../../components/Divider";
 import Image from "../../components/Image";
+import Leading from "../../components/Leading";
 import Navigator from "../../components/Navigator";
 import DestinationTag from "./DestinationTag";
-
-
-
+import DefPadding from "../../components/DefPadding";
 
 export default function DestinationsDetail() {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -21,7 +20,9 @@ export default function DestinationsDetail() {
   }, [currentIndex]);
 
   return (
-    <>
+    <DefPadding>
+      
+      <Leading text="01 PICK YOUR DESTINATION" />
       <Container>
         <Image src={destination.images.png} />
         <div className="flex flex-col items-center lg:items-start">
@@ -54,6 +55,6 @@ export default function DestinationsDetail() {
           </div>
         </div>
       </Container>
-    </>
+    </DefPadding>
   );
 }

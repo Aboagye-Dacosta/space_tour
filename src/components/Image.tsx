@@ -14,13 +14,21 @@ const image = {
   },
 };
 
-export default function Image({ src }: { src: string }) {
+export default function Image({
+  src,
+  fit = "contain",
+}: {
+  src: string;
+  fit?: "cover" | "contain";
+}) {
   return (
-    <div className="max-w-[60rem] h-full ">
+    <div className="h-full">
       <motion.img
         src={src}
         alt={src.split(".")[0]}
-        className="object-contain h-full"
+        className={`${
+          fit == "contain" ? "object-contain" : "object-cover"
+        } h-full`}
         variants={image}
       />
     </div>

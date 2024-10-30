@@ -20,7 +20,7 @@ function Navigator({
   selectedIndex = 0,
 }: NavigatorInterface) {
   return (
-    <nav className="">
+    <nav className="py-3">
       <ul className="flex gap-[3rem]">
         {destinations.map((destination, i) =>
           type == "link" ? (
