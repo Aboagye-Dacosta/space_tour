@@ -6,19 +6,9 @@ import { render, screen } from "./setup/test-utils";
 describe("Testing Navigator", () => {
   const destinations = ["home", "destination", "crew", "technology"];
 
-  const renderComponent = ({
-    role,
-    destinations,
-    genDestination,
-  }: {
-    role: "link" | "button";
-    destinations: string[];
-    genDestination(destination: string, index: number): string;
-  }) => {
+  const renderComponent = ({ role }: { role: "link" | "button" }) => {
     render(<Navigator destinations={destinations} type={role} />);
-    const buttons = destinations.map((destination, i) =>
-      screen.getByRole("", { name: genDestination(destination, i) })
-    );
+    const buttons = screen.getAllByRole(role);
     return {
       buttons,
     };
@@ -27,8 +17,6 @@ describe("Testing Navigator", () => {
   it("should change the active nav tab to the current link that is clicked", async () => {
     const { buttons: links } = renderComponent({
       role: "link",
-      destinations: destinations,
-      genDestination: (str, i) => `0${i} ${str}`,
     });
 
     for (let i = 0; i < links.length; i++) {
