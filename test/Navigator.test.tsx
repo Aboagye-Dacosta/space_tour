@@ -17,7 +17,7 @@ describe("Testing Navigator", () => {
   }) => {
     render(<Navigator destinations={destinations} type={role} />);
     const buttons = destinations.map((destination, i) =>
-      screen.getByRole(role, { name: genDestination(destination, i) })
+      screen.getByRole("", { name: genDestination(destination, i) })
     );
     return {
       buttons,
